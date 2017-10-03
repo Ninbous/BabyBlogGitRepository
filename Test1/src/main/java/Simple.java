@@ -1,20 +1,30 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class Simple {
 
     public boolean CreatePostMethod() {
-        System.setProperty("webdriver.chrome.driver", "C:\\SeleniumDrivers\\chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "C:\\SeleniumDrivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.babyblog.ru/");
         //Клик на войти
         driver.findElement(By.id("enter")).click();
+        //Скриншот
+        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(scrFile, new File("screen.png"));
+            System.out.println("Скриншот!");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
         //Заполнение логина и пароля
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); //Форма загружается нужен implicitlyWait
         WebElement loginField = driver.findElement(By.cssSelector("input[name= 'login']"));
