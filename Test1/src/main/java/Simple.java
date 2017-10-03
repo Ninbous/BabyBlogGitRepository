@@ -11,7 +11,7 @@ public class Simple {
 
     public boolean CreatePostMethod() {
         //System.setProperty("webdriver.chrome.driver", "C:\\SeleniumDrivers\\chromedriver.exe");
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver.tbz2");
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver.tar.bz2");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.babyblog.ru/");
