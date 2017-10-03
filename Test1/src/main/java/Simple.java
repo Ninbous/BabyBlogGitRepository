@@ -17,16 +17,16 @@ public class Simple {
         //Клик на войти
         driver.findElement(By.id("enter")).click();
         //Скриншот
-        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        /*File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
             FileUtils.copyFile(scrFile, new File("screen.png"));
             System.out.println("Скриншот!");
         }
         catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
         //Заполнение логина и пароля
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); //Форма загружается нужен implicitlyWait
+        /*driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); //Форма загружается нужен implicitlyWait
         WebElement loginField = driver.findElement(By.cssSelector("input[name= 'login']"));
         loginField.sendKeys("cqnpqu@hi2.in");
         WebElement passwordField = driver.findElement(By.cssSelector("input[name= 'password']"));
@@ -53,6 +53,7 @@ public class Simple {
         //Проверяем
         //TODO: Логика првоерки
         //div.blog-text.user-used
+        */
         return true;
     }
 }
