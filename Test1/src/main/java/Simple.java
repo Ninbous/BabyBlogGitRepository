@@ -1,6 +1,7 @@
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 
 import java.io.File;
@@ -12,16 +13,14 @@ public class Simple {
     public boolean CreatePostMethod() {
         //System.setProperty("webdriver.chrome.driver", "C:\\SeleniumDrivers\\chromedriver.exe");
       //  System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-        WebDriver driver;
-//        try {
-            driver = new ChromeDriver();
-//        }catch (Exception e){
-//            System.out.println("========Внизу эксепшн==========");
-//            System.out.println(e);
-//            System.out.println("========Конец экспешна=========");
-//        }
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--start-maximized");
+
+        WebDriver driver = new ChromeDriver(options);
+
+
         driver.get("https://www.babyblog.ru/");
-        driver.manage().window().maximize();  // - этот метод вызывает ошибку на сервере без монитора, видимо из за того что нет окна
+       // driver.manage().window().maximize();  // - этот метод вызывает ошибку на сервере без монитора, видимо из за того что нет окна
 
         //Клик на войти
 
