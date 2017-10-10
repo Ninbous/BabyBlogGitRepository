@@ -11,7 +11,7 @@ public class Simple {
 
     public boolean CreatePostMethod() {
         //System.setProperty("webdriver.chrome.driver", "C:\\SeleniumDrivers\\chromedriver.exe");
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+      //  System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         WebDriver driver;
         try {
             driver = new ChromeDriver();
