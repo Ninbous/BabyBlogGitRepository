@@ -16,7 +16,7 @@ public class Simple {
         try {
             driver = new ChromeDriver();
         }catch (Exception e){
-            System.out.println("Произошло ещё какое-то исключение");
+            System.out.println(e);
         }
         /*
         driver.manage().window().maximize();
