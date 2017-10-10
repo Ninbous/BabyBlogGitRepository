@@ -16,7 +16,9 @@ public class Simple {
         try {
             driver = new ChromeDriver();
         }catch (Exception e){
+            System.out.println("========Внизу эксепшн==========");
             System.out.println(e);
+            System.out.println("========Конец экспешна=========");
         }
         /*
         driver.manage().window().maximize();
