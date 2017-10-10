@@ -12,7 +12,13 @@ public class Simple {
     public boolean CreatePostMethod() {
         //System.setProperty("webdriver.chrome.driver", "C:\\SeleniumDrivers\\chromedriver.exe");
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver;
+        try {
+            driver = new ChromeDriver();
+        }catch (Exception e){
+            System.out.println("Произошло ещё какое-то исключение");
+        }
+        /*
         driver.manage().window().maximize();
         driver.get("https://www.babyblog.ru/");
         //Клик на войти
@@ -25,7 +31,7 @@ public class Simple {
         }
         catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
         //Заполнение логина и пароля
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); //Форма загружается нужен implicitlyWait
         WebElement loginField = driver.findElement(By.cssSelector("input[name= 'login']"));
@@ -54,6 +60,7 @@ public class Simple {
         //Проверяем
         //TODO: Логика првоерки
         //div.blog-text.user-used
+        */
         return true;
     }
 }
