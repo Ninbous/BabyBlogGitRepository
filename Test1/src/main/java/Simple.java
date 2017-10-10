@@ -13,27 +13,27 @@ public class Simple {
         //System.setProperty("webdriver.chrome.driver", "C:\\SeleniumDrivers\\chromedriver.exe");
       //  System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         WebDriver driver;
-        try {
+//        try {
             driver = new ChromeDriver();
-        }catch (Exception e){
-            System.out.println("========Внизу эксепшн==========");
-            System.out.println(e);
-            System.out.println("========Конец экспешна=========");
-        }
-        /*
+//        }catch (Exception e){
+//            System.out.println("========Внизу эксепшн==========");
+//            System.out.println(e);
+//            System.out.println("========Конец экспешна=========");
+//        }
+
         driver.manage().window().maximize();
         driver.get("https://www.babyblog.ru/");
         //Клик на войти
         driver.findElement(By.id("enter")).click();
         //Скриншот
-        /*File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        try {
-            FileUtils.copyFile(scrFile, new File("screen.png"));
-            System.out.println("Скриншот!");
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+//        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//        try {
+//            FileUtils.copyFile(scrFile, new File("screen.png"));
+//            System.out.println("Скриншот!");
+//        }
+//        catch (IOException e) {
+//            e.printStackTrace();
+//        }
         //Заполнение логина и пароля
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); //Форма загружается нужен implicitlyWait
         WebElement loginField = driver.findElement(By.cssSelector("input[name= 'login']"));
@@ -62,7 +62,6 @@ public class Simple {
         //Проверяем
         //TODO: Логика првоерки
         //div.blog-text.user-used
-        */
         return true;
     }
 }
