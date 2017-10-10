@@ -20,10 +20,9 @@ public class Simple {
 //            System.out.println(e);
 //            System.out.println("========Конец экспешна=========");
 //        }
-
-        //driver.manage().window().maximize();   - этот метод вызывает ошибку на сервере без монитора, видимо из за того что нет окна
-
         driver.get("https://www.babyblog.ru/");
+        driver.manage().window().maximize();  // - этот метод вызывает ошибку на сервере без монитора, видимо из за того что нет окна
+
         //Клик на войти
 
         driver.findElement(By.id("enter")).click();
@@ -64,7 +63,7 @@ public class Simple {
         //Проверяем
         //TODO: Логика првоерки
         //div.blog-text.user-used
-        
+
         return true;
     }
 }
