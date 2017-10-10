@@ -20,6 +20,15 @@ public class Simple {
 
 
         driver.get("https://www.babyblog.ru/");
+        //Скриншот
+        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(scrFile, new File("screen01.png"));
+            System.out.println("Скриншот1!");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
        // driver.manage().window().maximize();  // - этот метод вызывает ошибку на сервере без монитора, видимо из за того что нет окна
 
         //Клик на войти
@@ -28,8 +37,8 @@ public class Simple {
         //Скриншот
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(scrFile, new File("screen.png"));
-            System.out.println("Скриншот!");
+            FileUtils.copyFile(scrFile, new File("screen02.png"));
+            System.out.println("Скриншот2!");
         }
         catch (IOException e) {
             e.printStackTrace();
