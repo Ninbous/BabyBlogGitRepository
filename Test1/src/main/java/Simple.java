@@ -31,15 +31,6 @@ public class Simple {
 
         //Клик на войти
         driver.findElement(By.id("enter")).click();
-        //Скриншот
-//        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-//        try {
-//            FileUtils.copyFile(scrFile, new File("screen02.png"));
-//            System.out.println("Скриншот2!");
-//        }
-//        catch (IOException e) {
-//            e.printStackTrace();
-//        }
         //Заполнение логина и пароля
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); //Форма загружается нужен implicitlyWait
         WebElement loginField = driver.findElement(By.cssSelector("input[name= 'login']"));
@@ -65,6 +56,15 @@ public class Simple {
         driver.findElement(By.cssSelector("label[for= 'access_private']")).click();
         //Кликаем опубликовать
         driver.findElement(By.cssSelector("button.btn._b._b_s._b_btn._14.noi.sgn.super.ml15.css-corner-3.fl._18")).click();
+        //Скриншот
+        File scrFile2 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(scrFile2, new File("screen02.png"));
+            System.out.println("Скриншот1!");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
         //Проверяем
         //TODO: Логика првоерки
         //div.blog-text.user-used
