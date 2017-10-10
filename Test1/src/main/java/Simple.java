@@ -21,10 +21,11 @@ public class Simple {
 //            System.out.println("========Конец экспешна=========");
 //        }
 
-        driver.manage().window().maximize();
-        /*
+        //driver.manage().window().maximize();
+
         driver.get("https://www.babyblog.ru/");
         //Клик на войти
+        /*
         driver.findElement(By.id("enter")).click();
         //Скриншот
 //        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
