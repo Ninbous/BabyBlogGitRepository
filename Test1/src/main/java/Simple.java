@@ -22,6 +22,7 @@ public class Simple {
 //        }
 
         driver.manage().window().maximize();
+        /*
         driver.get("https://www.babyblog.ru/");
         //Клик на войти
         driver.findElement(By.id("enter")).click();
@@ -62,6 +63,7 @@ public class Simple {
         //Проверяем
         //TODO: Логика првоерки
         //div.blog-text.user-used
+        */
         return true;
     }
 }
