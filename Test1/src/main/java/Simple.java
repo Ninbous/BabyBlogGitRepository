@@ -15,11 +15,10 @@ public class Simple {
       //  System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
-
         WebDriver driver = new ChromeDriver(options);
 
-
         driver.get("https://www.babyblog.ru/");
+
         //Скриншот
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
@@ -29,20 +28,18 @@ public class Simple {
         catch (IOException e) {
             e.printStackTrace();
         }
-       // driver.manage().window().maximize();  // - этот метод вызывает ошибку на сервере без монитора, видимо из за того что нет окна
 
         //Клик на войти
-
         driver.findElement(By.id("enter")).click();
         //Скриншот
-        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        try {
-            FileUtils.copyFile(scrFile, new File("screen02.png"));
-            System.out.println("Скриншот2!");
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+//        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//        try {
+//            FileUtils.copyFile(scrFile, new File("screen02.png"));
+//            System.out.println("Скриншот2!");
+//        }
+//        catch (IOException e) {
+//            e.printStackTrace();
+//        }
         //Заполнение логина и пароля
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); //Форма загружается нужен implicitlyWait
         WebElement loginField = driver.findElement(By.cssSelector("input[name= 'login']"));
