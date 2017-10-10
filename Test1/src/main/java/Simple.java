@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class Simple {
 
     public boolean CreatePostMethod() {
-        //System.setProperty("webdriver.chrome.driver", "C:\\SeleniumDrivers\\chromedriver.exe");
+       // System.setProperty("webdriver.chrome.driver", "C:\\SeleniumDrivers\\chromedriver.exe");
       //  System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
@@ -26,14 +26,14 @@ public class Simple {
 
         driver.findElement(By.id("enter")).click();
         //Скриншот
-//        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-//        try {
-//            FileUtils.copyFile(scrFile, new File("screen.png"));
-//            System.out.println("Скриншот!");
-//        }
-//        catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(scrFile, new File("screen.png"));
+            System.out.println("Скриншот!");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
         //Заполнение логина и пароля
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); //Форма загружается нужен implicitlyWait
         WebElement loginField = driver.findElement(By.cssSelector("input[name= 'login']"));
