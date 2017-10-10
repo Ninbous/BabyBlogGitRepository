@@ -21,11 +21,11 @@ public class Simple {
 //            System.out.println("========Конец экспешна=========");
 //        }
 
-        //driver.manage().window().maximize();
+        //driver.manage().window().maximize();   - этот метод вызывает ошибку на сервере без монитора, видимо из за того что нет окна
 
         driver.get("https://www.babyblog.ru/");
         //Клик на войти
-        /*
+
         driver.findElement(By.id("enter")).click();
         //Скриншот
 //        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -64,7 +64,7 @@ public class Simple {
         //Проверяем
         //TODO: Логика првоерки
         //div.blog-text.user-used
-        */
+        
         return true;
     }
 }
