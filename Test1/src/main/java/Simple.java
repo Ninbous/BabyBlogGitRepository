@@ -3,6 +3,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,33 +13,44 @@ import java.util.concurrent.TimeUnit;
 public class Simple {
 
     public boolean CreatePostMethod() {
-       // System.setProperty("webdriver.chrome.driver", "C:\\SeleniumDrivers\\chromedriver.exe");
-      //  System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "C:\\SeleniumDrivers\\chromedriver.exe");
+        //  System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         WebDriver driver = new ChromeDriver(options);
 
+
+//
+//        driver.get(baseUrl);
         driver.get("https://www.babyblog.ru/");
 
         //Скриншот
-        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        try {
-            FileUtils.copyFile(scrFile, new File("screen01.png"));
-            System.out.println("Скриншот1!");
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+//        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//        try {
+//            FileUtils.copyFile(scrFile, new File("screen01.png"));
+//            System.out.println("Скриншот1!");
+//        }
+//        catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         //Клик на войти
         driver.findElement(By.id("enter")).click();
         //Заполнение логина и пароля
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); //Форма загружается нужен implicitlyWait
         WebElement loginField = driver.findElement(By.cssSelector("input[name= 'login']"));
+
+        //   loginField.sendKeys("cqnpqu@hi2.in");
+
         loginField.sendKeys("cqnpqu@hi2.in");
         WebElement passwordField = driver.findElement(By.cssSelector("input[name= 'password']"));
         passwordField.sendKeys("1111");
         //Кнопка войти
+        //Обход капчи гугла
+        Actions action1 = new Actions(driver);
+        WebElement menu1 = driver.findElement(By.cssSelector("button.r-btn.r-btn__green.r-btn__fill"));
+        action1.moveToElement(menu1).build().perform();
+
         driver.findElement(By.cssSelector("button.r-btn.r-btn__green.r-btn__fill")).click();
         //Наведение мыши на правое верхнее меню
         Actions action = new Actions(driver);
@@ -61,8 +74,7 @@ public class Simple {
         try {
             FileUtils.copyFile(scrFile2, new File("screen02.png"));
             System.out.println("Скриншот1!");
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         //Проверяем
